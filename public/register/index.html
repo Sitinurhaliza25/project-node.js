@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Projekan</title>
+</head>
+
+<body>
+    <form name="login" display: flex; flex-direction: column; gap: 10px;>
+        <div class="logo">☞ Login ☜</div>
+        <label for="login">username 👥</label>
+        <input name="username" type="text" placeholder="Masukan username">
+        <label for="login">password 🔐</label>
+        <input name="password" type="password" placeholder="password">
+        <button>Register 𓍢ִ໋🌷͙֒</button>
+
+    </form>
+</body>
+
+</html>
+
+<script>
+    document.querySelector("button").onclick = async (e) => {
+        e.preventDefault();
+        const username = document.login.username.value;
+        const password = document.login.password.value;
+        // untuk mengubah jdi json
+        await fetch("/api/daftar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            // untuk mengubah user dan pss menjadi Json
+            body: JSON.stringify({
+                username,
+                password,
+            }),
+        });
+        alert("Akun Anda Sudah Terdaftar.");
+        location.href = "/login";
+    };
+</script>
