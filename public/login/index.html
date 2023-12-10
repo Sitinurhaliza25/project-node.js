@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/Asset/logo1.jpg" type="image/x-icon"/>
+
+    <title>Projekan</title>
+</head>
+
+<body>
+    <form name="login" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="logo">☞ Login ☜</div>
+        <label for="text" class="login">Username 👥</label>
+        <input name="username" type="text" placeholder="Input Username">
+        <label for="password" class="login">Password 🔐</label>
+        <input name="password" type="password" placeholder="Input Password">
+        <h4>Do you already have an account?<a href="/register"> Register</a></h4>
+        <button type="submit">Login now 𓍢ִ໋🌷͙֒</button>
+    </form>
+
+</body>
+    <script>
+        document.login.onsubmit = (e) => {
+        e.preventDefault();
+        const username = document.login.username.value;
+        const password = document.login.password.value;
+        fetch("/api/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        }).then(async (response) => {
+          if (response.ok) {
+            location.href = "/home";
+          } else {
+            const message = await response.text();
+            alert(message);
+          
+          }
+        });
+      };
+    </script>
+
+</html>

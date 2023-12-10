@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAFTAR BARANG</title>
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper">
+          <div class="logo">DAFTAR BARANG</div>
+          <div class="menu">
+              <ul >
+                  <li><a class="tbl-biru" href="../details/index.html">Kembali</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <table border="2">
+      <thead>
+        <tr>
+          <th>Nama barang</th>
+          <th>Harga barang</th>
+          <th>Kode barang</th>
+          <th>stok barang</th>
+          <th>foto</th>
+          <th>Edit</th>
+          <th>Tambah</th>
+          <th>Hapus</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      if (!localStorage.getItem("token")) {
+        location.href = "/hal-admin";
+      }
+
+      fetch("/api/barang", {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          for (let i = 0; i < data.length; i++) {
+            const tr = document.createElement("tr");
+
+            const tdNim = document.createElement("td");
+            tdNim.textContent = data[i].nama_barang;
+            tr.appendChild(tdNim);
+
+            const tdName = document.createElement("td");
+            tdName.textContent ="Rp."+ data[i].harga;
+            tr.appendChild(tdName);
+
+            const kode= document.createElement("td");
+            kode.textContent = data[i].kode;
+            tr.appendChild(kode);
+
+            const stok= document.createElement("td");
+            stok.textContent = data[i].stok;
+            tr.appendChild(stok);
+
+            const tdPhoto = document.createElement("td");
+            const imgPhoto = document.createElement("img");
+            imgPhoto.src = `/image/${data[i].foto}`;
+            tdPhoto.appendChild(imgPhoto);
+            tr.appendChild(tdPhoto);
+
+            const tdEdit = document.createElement("td");
+            const anchorEdit = document.createElement("a");
+            anchorEdit.className="tbl-biru";
+            anchorEdit.textContent = "Edit";
+            anchorEdit.href = `../edit?id=${data[i].id}`;
+            tdEdit.appendChild(anchorEdit);
+            tr.appendChild(tdEdit);
+
+            const tdtambah = document.createElement("td");
+            const anchortambah = document.createElement("a");
+            anchortambah.className="tbl-biru";
+            anchortambah.textContent = "tambah";
+            anchortambah.href = `../insert?id=${data[i].id}`;
+            tdtambah.appendChild(anchortambah);
+            tr.appendChild(tdtambah);
+
+            const tdhapus = document.createElement("td");
+            const anchorhapus = document.createElement("a");
+            anchorhapus.className="tbl-biru";
+            anchorhapus.textContent = "hapus";
+            anchorhapus.href = `../delete?id=${data[i].id}`;
+            tdhapus.appendChild(anchorhapus);
+            tr.appendChild(tdhapus);
+
+            document.querySelector("tbody").appendChild(tr);
+          }
+        });
+    </script>
+  
+  </body>
+ 
+
+</html>

@@ -5,42 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/Asset/logo1.jpg" type="image/x-icon"/>
+
 
     <title>Projekan</title>
 </head>
 
 <body>
-    <form name="login" display: flex; flex-direction: column; gap: 10px;>
-        <div class="logo">☞ Login ☜</div>
-        <label for="login">username 👥</label>
-        <input name="username" type="text" placeholder="Masukan username">
-        <label for="login">password 🔐</label>
-        <input name="password" type="password" placeholder="password">
-        <button>Register 𓍢ִ໋🌷͙֒</button>
-
+    <form name="register" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="logo">☞ Register ☜</div>
+        <label for="text" class="login">Username 👥</label>
+        <input name="username" type="text" placeholder="Input Username">
+        <label for="password" class="login">Password 🔐</label>
+        <input name="password" type="password" placeholder="Input Password">
+        <!-- <label for="image" class="login">Select Image 🌆</label>
+        <input type="file" name="image"> -->
+        <h4>Do you already have an account?<a href="/public/login/index.html"> login</a></h4>
+        <button type="submit">Register 𓍢ִ໋🌷͙֒</button>
     </form>
+
 </body>
+    <script>
+        document.register.onsubmit = async (e) => {
+            e.preventDefault();
+            const username = document.register.username.value;
+            const password = document.register.password.value;
+            console.log(document.register.password.value);
+            // Send data as FormData, no need for JSON.stringify
+            await fetch("/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    username,
+                    password,
+                }),
+            }).then(async (response) => {
+                if (response.ok) {
+                    alert("Akun Anda Sudah Terdaftar.");
+                    location.href = "/login";
+                } else {
+                    const message = await response.text();
+                    alert(message);
+                }
+            });
+             // untuk mengubah user dan pss menjadi Json
+            // body: JSON.stringify({
+            //     username,
+            //     password,
+            // }),
+        };
+
+
+       
+    </script>
 
 </html>
 
-<script>
-    document.querySelector("button").onclick = async (e) => {
-        e.preventDefault();
-        const username = document.login.username.value;
-        const password = document.login.password.value;
-        // untuk mengubah jdi json
-        await fetch("/api/daftar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            // untuk mengubah user dan pss menjadi Json
-            body: JSON.stringify({
-                username,
-                password,
-            }),
-        });
-        alert("Akun Anda Sudah Terdaftar.");
-        location.href = "/login";
-    };
-</script>
+
+

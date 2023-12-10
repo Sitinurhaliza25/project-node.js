@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Admin Page</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Raleway:300");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background: black;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Raleway', sans-serif;
+      color: aliceblue;
+      background: url(/public/Asset/Web_Photo_Editor.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      /* background-color: #ffffff; */
+      background: linear-gradient(to right, rgb(242, 95, 255),rgb(255, 255, 255) , rgb(255, 129, 150), rgb(255, 255, 255));
+      padding: 10px;
+      margin-top: 90%;
+      color: black;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+    }
+
+    .container1 {
+      text-align: center;
+    }
+
+
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    button {
+      position: relative;
+      height: 60px;
+      width: 200px;
+      border: none;
+      outline: none;
+      color: white;
+      background: #111;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: background 0.3s, transform 0.3s;
+      overflow: hidden;
+    }
+
+    button a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    button:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      height: calc(100% + 4px);
+      width: calc(100% + 4px);
+      border-radius: 5px;
+      z-index: -1;
+      opacity: 0;
+      filter: blur(5px);
+      background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+      background-size: 400%;
+      transition: opacity 0.3s ease-in-out;
+      animation: animate 20s linear infinite;
+    }
+
+    button:hover {
+      background: none;
+      transform: scale(1.05);
+    }
+
+    button:hover:before {
+      opacity: 1;
+    }
+
+
+
+    @keyframes animate {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+    }
+       /* Tombol Kembali */
+
+  </style>
+</head>
+<body>
+    <form action="container">
+        <div class="container">
+            <div class="container1">
+                <h1>User Admin Page</h1>
+                
+                <button><a href="/public/register/index.html">User</a></button>
+                <button><a href="/public/admin/index.html">Admin</a></button>
+                
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Edit Barang</title>
+    <!-- <link rel="stylesheet" href="/style.css" /> -->
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper">
+          <div class="logo">Edit Barang</div>
+          <div class="menu">
+              <ul >
+                  <li><a class="tbl-biru" href="/hal-admin/">Kembali</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <section>
+    <div class="container-edit">
+      <div class="body-edit">
+        <form name="edit" class="edit">
+          <h1>Edit barang</h1>
+          <input type="text" name="nama_barang" placeholder="nama barang" required autofocus />
+          <input type="text" name="harga" placeholder="harga barang" required />
+          <input type="text" name="kode" placeholder="kode barang" required />
+          <input type="text" name="stok" placeholder="Stok barang" required />
+          <label>
+            Foto
+            <input type="file" name="photo" />
+          </label>
+          <button >Simpan</button>
+        </form>  
+        <div class="right"><img src="../gg.png" alt=""></div>
+      </div>  
+    </div>
+
+  </section>
+
+    <script>
+      const searchParams = new URLSearchParams(location.search);
+    
+      fetch(`/api/barang/${searchParams.get("id")}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          document.edit.nama_barang.value = data.nama_barang;
+          document.edit.harga.value = data.harga;
+          document.edit.kode.value = data.kode;
+          document.edit.stok.value = data.stok;
+        });
+    
+      document.edit.onsubmit = async (e) => {
+        e.preventDefault();
+        const data = new FormData();
+        data.append("nama_barang", document.edit.nama_barang.value);
+        data.append("harga", document.edit.harga.value);
+        data.append("kode", document.edit.kode.value);
+        data.append("stok", document.edit.stok.value);
+        data.append("image", document.edit.photo.files[0]);
+    
+        try {
+          const response = await fetch(`/api/barang/${searchParams.get("id")}`, {
+            method: "PUT",
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            body: data,
+          });
+    
+          const responseData = await response.json();
+    
+          if (response.ok) {
+            alert("Data Berhasil Di edit.");
+            location.href = "../details";
+          } else {
+            alert(`Error: ${responseData.message}`);
+          }
+        } catch (error) {
+          alert("Data changed successfully.");
+          location.href = "../details";
+        }
+      };
+    </script>
+    
+   
+    
+  </body>
+
+</html>

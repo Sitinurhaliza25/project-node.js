@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Projekan</title>
+</head>
+
+<body>
+    <a  class="back" href="../home/index.html">Kembali</a>
+    <form name="register" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="logo">☞ Admin ☜</div>
+        <label for="text" class="login">Username 👥</label>
+        <input name="username" type="text" placeholder="Input Username">
+        <label for="password" class="login">Password 🔐</label>
+        <input name="password" type="password" placeholder="Input Password">
+        <!-- <label for="image" class="login">Select Image 🌆</label>
+        <input type="file" name="image"> -->
+        <h4>admin account Admin</h4>
+        <button type="submit">Admin Now𓍢ִ໋🌷͙֒</button>
+    </form>
+
+    <script>
+      
+
+        const userDatabase = [
+            { username: "liza", password: "liza25" },
+            // Tambahkan pengguna lain jika diperlukan
+        ];
+
+        document.register.onsubmit = async (e) => {
+            e.preventDefault();
+            const username = document.register.username.value;
+            const password = document.register.password.value;
+
+            // Cari pengguna dalam basis data
+            const user = userDatabase.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                alert("Login successful!");
+                // You can redirect to the admin page or perform other actions here
+                location.href = "../hal-admin";
+            } else {
+                alert("Invalid username or password");
+            }
+        };
+       
+    </script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,145 @@
+* {
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background: linear-gradient(to right, rgb(242, 95, 255),rgb(246, 145, 255) , rgb(255, 180, 192), pink);
+
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    float: left;
+    font-family: Courier;
+    color: #000000;
+}
+
+.menu {
+    float: right;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    margin-bottom: 80px;
+}
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: linear-gradient(to right, rgb(242, 95, 255),rgb(246, 145, 255) , rgb(255, 180, 192), pink);
+    z-index: 1;
+    border-bottom: 1px solid black;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+a.tbl-biru {
+    background-color: #000000;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-biru:hover {
+    background-color: #d60000;
+    text-decoration: none;
+    color: #000000;
+}
+
+.tbl-biru {
+    background-color: burlywood;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tbl-biru:hover {
+    background-color: #ff0000;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+table {
+    /* border-collapse: collapse; */
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px; /* Set maximum width for the table */
+
+}
+
+th, td {
+    padding: 15px; /* Adjusted padding */
+    text-align: center;
+}
+
+thead {
+background-color: antiquewhite;
+}
+
+tbody {
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.img-produk {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        width: 90%;
+    }
+   
+}

@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bacasime+Antique&family=Cormorant:ital,wght@1,300&family=Kaisei+Decol:wght@700&family=Kalam&family=Lugrasimo&family=Lumanosimo&family=Montserrat&family=Permanent+Marker&family=Poppins:ital,wght@0,400;1,700;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Jost", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  
+}
+body{
+    background: linear-gradient(to right, rgb(242, 95, 255),rgb(246, 145, 255) , rgb(255, 180, 192), pink);
+
+}
+/* ini header */
+header {
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  /* background-color: black; */
+  background: linear-gradient(to right, rgb(242, 95, 255),rgb(246, 145, 255) , rgb(255, 180, 192), pink);
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+}
+.logo  h1{
+    color: #ffffff;
+    font-size: 22px;
+     padding: 5px 20px;
+     font-weight: 600;
+     margin-left: -30%;
+     text-transform: uppercase;
+}
+.produc-logo{
+  background-color: rgb(246, 119, 255);
+  border-radius: 20%;
+}
+/* CSS PRODUC */
+/* card */
+/* ini css navmenu */
+.navmenu {
+  display: flex;
+}
+.navmenu a {
+  color: #fff8f8;
+  font-size: 1rem;
+   padding: 11px 20px;
+   font-weight: 600;
+   text-transform: uppercase;
+}
+.navmenu a:hover {
+  color: rgb(9, 231, 216);
+  background-color: #ffffff;
+  border-radius: 20%;
+}
+/* ini css untuk nav icon */
+.nav-icon {
+  display: flex;
+}
+.nav-icon i {
+  margin-right: 20px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 400;
+  transition: all 0.42s ease;
+}
+.nav-icon i:hover {
+  transform: scale(1.1);
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  border-radius: 20%;
+}
+/* ini css logoutnya */
+.logout{
+  color: rgb(255, 255, 255);
+  margin-left: 120%;
+  font-size: 20px;
+  font-weight: 400;
+  transition: all 0.42s ease;
+}
+.logout:hover{
+    transform: scale(1.1);
+    color: rgb(74, 163, 157);
+    background-color: #ffffff;
+    border-radius: 20%;
+}
+
+/* ini css menu iconnya */
+#menu-icon {
+  font-size: 35px;
+  color: #ffffff;
+  z-index: 10001;
+  cursor: pointer;
+  display: none;
+}
+header .nav-icon span {
+  background: rgb(255, 0, 0);
+  border-radius: 50%;
+  display: flex;
+  color: #fff;
+  position: absolute;
+  top: 3px;
+  left: 83%;
+  padding: 5px 10px;
+
+}
+/* ini css buat video */
+.background-clip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+/* Updated CSS for responsive video */
+.main-home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/*  ini css main btn nya */
+.main-btn {
+  display: inline-block;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-left: 43%;
+  border: 3px solid #000000;
+  padding: 12px 25px;
+  border-radius: 30%;
+  /* background-color: #c7ad56; */
+  background: linear-gradient(to right, rgb(242, 95, 255),rgb(245, 135, 255) , rgb(255, 147, 165), rgb(255, 131, 152));
+  margin-top: 42%;
+  transition: all 0.42s ease;
+
+}
+
+
+
+  
+  /* ini css contact */
+  #contact {
+    /* background-color: #c7ad56; */
+    background: linear-gradient(to right, rgb(242, 95, 255),rgb(246, 145, 255) , rgb(255, 180, 192), pink);
+  
+  }
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    gap: 3rem;
+  }
+  .first-info img {
+    width: 140px;
+    margin-top: 5%;
+    margin-left: 5%;
+    height: auto;
+  }
+  .contact-info h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 5%;
+    margin-left: 5%;
+    color: rgb(0, 0, 0);
+  }
+  .contact-info p {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-left: 5%;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.42s;
+  }
+  .contact-info p:hover {
+    color: #ee1c47;
+  }
+  .social-icon i {
+    color: #000000;
+    margin-right: 10px;
+    font-size: 20px;
+    margin-left: 5%;
+    width: 20px;
+    transition: all 0.42s;
+  }
+  .social-icon i:hover {
+    transform: scale(1.3);
+  }
+  .end-text {
+    background-color: #000000;
+    text-align: center;
+    /* padding: 10px; */
+  }
+  .end-text p {
+    color: #ffffff;
+    /* text-transform: capitalize; */
+  }
+  
+  .bg1 img {
+    border-radius: 70%;
+    box-shadow: 0 30px 30px #ffffff;
+    width: 20%;
+  }
+  
+ 
+#barang {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-start-end-radius: 10%;
+    border-end-start-radius: 10%;
+    border-end-end-radius: 20%;
+    border-start-start-radius: 20%;
+    box-shadow: 0 40px 40px #d0ffff;
+    letter-spacing: 1px;
+    border: solid black;
+
+    
+}
+
+.container img {
+    width: 270px;
+    height: 235px;
+    border: solid black;
+    border-radius: 10%;
+
+
+}
+
+.container h4 {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.container h3 {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.container button {
+    background-color: #000000;
+    color: #fff;
+    width: 50%;
+    border-radius: 6%;
+    padding: 10px;
+}
+
+#container {
+    display: flex;
+    padding: 5%;
+}
+
+
+.fa-shopping-cart {
+    height: 20px;
+    width: 20px;
+
+
+}
+
+.fa-shopping-cart:hover {
+    color: rgb(42, 165, 42);
+
+}
+
+.img-produk {
+    width: 250px;
+    height: 250px;
+    border: solid black;
+    border-radius: 10%;
+
+}
+
+
+ /* Responsive Styles for screens up to 280px */
+ @media screen and (max-width: 280px) {
+    body {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+  
+    .container {
+        padding: 5px;
+        overflow-x: hidden;
+    }
+  
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+  
+    .logo {
+        font-size: 10px;
+        margin-bottom: 0px;
+        overflow-x: hidden;
+    }
+  
+    .navmenu {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+  
+    .nav-icon {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+        overflow-x: hidden;
+    }
+  
+    .nav-icon li {
+        margin: 0;
+        overflow-x: hidden;
+    }
+  
+    .main-home h1 {
+        font-size: 20px;
+        overflow-x: hidden;
+    }
+  
+    .main-home h5 {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+  
+    .main-btn {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+  
+    .pro h1 {
+        font-size: 20px;
+        overflow-x: hidden;
+    }
+  
+    #products {
+        display: contents;
+    }
+  
+    .card h1 {
+        font-size: 10px;
+        overflow-x: hidden;
+    }
+  
+    .list {
+        display: grid;
+        overflow-x: hidden;
+    }
+  
+    .listCard li {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+  
+    .contact-info {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+  
+    .contact-info p {
+        font-size: 14px;
+        overflow-x: hidden;
+    }
+  
+    .social-icon {
+        font-size: 15px;
+        overflow-x: hidden;
+    }
+  
+    .end-text p {
+        font-size: 12px;
+        overflow-x: hidden;
+    }
+  
+    .first-info p {
+        font-size: 12px;
+    }
+  
+    header .nav-icon span {
+        margin-top: 40%;
+        margin-left: -40%;
+    }
+  
+    .card .checkOut div {
+        width: 50%;
+        margin-left: 50%;
+    }
+  
+    .card .total {
+        width: 50%;
+        margin-left: 10%;
+    }
+  }
+
+
+
+@media screen and (max-width:991.98px){
+    .wrapper{
+        width: 90%;
+    }
+
+     footer{
+        margin: 0px;
+     }
+}
